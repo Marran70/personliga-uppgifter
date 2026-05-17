@@ -2,7 +2,7 @@
 /config,noeldb,1     ! force off writing results to database
 *get,_wallstrt,active,,time,wall
 ! ANSYS input file written by Workbench version 2025 R2
-! File used for geometry attach: C:\Users\saluc\Documents\GitHub\personliga-uppgifter\ansys_files\dp0\SYS\DM\SYS.scdocx
+! File used for geometry attach: C:\Users\saluc\Documents\GitHub\Hallf2\ansys_files\dp0\SYS\DM\SYS.scdocx
 /title,ansys--Static Structural (A5)
 ! ****** Begin Custom Load Command Snippet ******
 /COM, ACT Extensions:
@@ -13,11 +13,11 @@
 /COM,
 ! ****** End   Custom Load Command Snippet ******
 *DIM,_wb_ProjectScratch_dir,string,248
-_wb_ProjectScratch_dir(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\_ProjectScratch\ScrFB8E\'
+_wb_ProjectScratch_dir(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\_ProjectScratch\ScrACD4\'
 *DIM,_wb_SolverFiles_dir,string,248
-_wb_SolverFiles_dir(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\ansys_files\dp0\SYS\MECH\'
+_wb_SolverFiles_dir(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\ansys_files\dp0\SYS\MECH\'
 *DIM,_wb_userfiles_dir,string,248
-_wb_userfiles_dir(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\ansys_files\user_files\'
+_wb_userfiles_dir(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\ansys_files\user_files\'
 /com,--- Data in consistent MKS units. See Solving Units in the help system for more information.
 /units,MKS
 /nopr
@@ -357,7 +357,7 @@ nsel,all
 /com,******* Constant Zero Displacement Y *******
 CMBLOCK,_DISPZEROUY,NODE,        4
 (8i10)
-         2        11        20       -29
+         2        11        20       -30
 cmsel,s,_DISPZEROUY
 d,all,uy,0
 nsel,all

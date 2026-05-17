@@ -1,4 +1,4 @@
-/COM,ANSYS RELEASE 2025 R2.04        BUILD 25.2      UP20251105       08:48:50
+/COM,ANSYS RELEASE 2025 R2.04        BUILD 25.2      UP20251105       09:11:59
 /NOPR
 UPLDSTEP,       1,BEGIN,       0
 KBC,     0,     0
@@ -14,7 +14,7 @@ DCGOMG,  0.00000000    ,  0.00000000    ,  0.00000000
 NLDIAG,EFLG,OFF
 NLDIAG,NRRE,OFF
 NLDIAG,CONT,ITER
-DBLOCK,        19
+DBLOCK,        20
 (i9,a6,2(pg16.9))
         1  UX    0.00000000      0.00000000    
         1  UY    0.00000000      0.00000000    
@@ -34,6 +34,7 @@ DBLOCK,        19
        27  UY    0.00000000      0.00000000    
        28  UY    0.00000000      0.00000000    
        29  UY    0.00000000      0.00000000    
+       30  UY    0.00000000      0.00000000    
        30  UZ    0.00000000      0.00000000    
        -1
 SFEBLOCK,4,PRES,        57,        48,0

@@ -1,10 +1,10 @@
 import numpy as np
-from scipy.linalg import eig
+from scipy.linalg import eig, eigh
 from mtm026 import assem, Ke_balk, Ke_sigma_balk, extract_block
 
 # Parametrar
 P0 = 1.0; L1 = 5.0; L2 = 5.0
-a = 0.05; t = 0.002; E = 200e9
+a = 0.07; t = 0.002; E = 200e9
 
 # Tröghetsmomenter
 Iv = (a**4 - (a - 2*t)**4) / 12
@@ -33,12 +33,23 @@ assem(K, Ke_h, dofs=[7, 6, 9, 8])
 
 assem(K, Ke_h, dofs=[12, 11, 14, 13])
 
-free_dofs = [3, 4, 5, 6, 5, 8, 10, 11, 10, 13]
+free_dofs = [3, 4, 5, 6, 8, 10, 11, 13]
 
 k_red = extract_block(K, free_dofs, free_dofs)
 k_red_sig = extract_block(K_sig, free_dofs, free_dofs)
 
-alpha , vec = eig(k_red, k_red_sig)
+alpha, vec = eig(k_red, k_red_sig)
 
-print(vec[3])
-print(np.min(alpha)*P0)
+#print(np.min(alpha)*P0)
+
+idx = np.argmin(np.real(alpha))
+
+# Hämta det minsta egenvärdet och dess tillhörande egenvektor
+min_alpha = alpha[idx]
+critical_vec = vec[:, idx]  # Kolumn 'idx' motsvarar egenvektorn för alpha[idx]
+print(f"Kritiskt egenvärde: {min_alpha.real}")
+print(f"Kritisk last: {min_alpha.real * P0}")
+print("Tillhörande egenvektor:")
+print(critical_vec.real)
+
+#för att få en kritiskt last som är högre än 15KN kan vi helt enkelt ändra på a som i sin tur ändrar tvärsnittet av balkarna

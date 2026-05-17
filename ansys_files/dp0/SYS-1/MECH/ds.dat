@@ -6,11 +6,11 @@
 /solu
 antype,,restart,,,perturbation
 *DIM,_wb_ProjectScratch_dir_Buckling,string,248
-_wb_ProjectScratch_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\_ProjectScratch\Scr5B8F\'
+_wb_ProjectScratch_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\_ProjectScratch\Scr132C\'
 *DIM,_wb_SolverFiles_dir_Buckling,string,248
-_wb_SolverFiles_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\ansys_files\dp0\SYS-1\MECH\'
+_wb_SolverFiles_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\ansys_files\dp0\SYS-1\MECH\'
 *DIM,_wb_userfiles_dir_Buckling,string,248
-_wb_userfiles_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\personliga-uppgifter\ansys_files\user_files\'
+_wb_userfiles_dir_Buckling(1) = 'C:\Users\saluc\Documents\GitHub\Hallf2\ansys_files\user_files\'
 /title,ansys--Eigenvalue Buckling (B5)
 ! ****** Begin Custom Load Command Snippet ******
 /COM, ACT Extensions:
