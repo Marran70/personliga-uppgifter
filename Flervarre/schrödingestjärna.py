@@ -60,7 +60,7 @@ idx = np.argsort(eigenvalues)
 eigenvalues  = eigenvalues[idx]
 eigenvectors = eigenvectors[:, idx]
 
-# Mappa tillbaka till alla noder (samma som i (a))
+#Mappa tillbaka till alla noder (samma som i (a))
 N = len(V_noder)
 U_full = np.zeros((N, num_eigs))
 for k in range(num_eigs):
@@ -79,12 +79,12 @@ for k in range(num_eigs):
     ax.set_ylabel('x_2')
 
 plt.tight_layout()
-#plt.savefig('stjärn_egenfunktioner.png', dpi=150)
+plt.savefig('stjärn_egenfunktioner.png', dpi=150)
 plt.show()
 
-# Steg 4:Konvergensstudie – jämför mot finaste nätet
+#Steg 4:Konvergensstudie – jämför mot finaste nätet
 
-# Ingen analytisk lösning finns, så vi använder 128x128 som referens
+#Ingen analytisk lösning finns, så vi använder 128x128 som referens
 print("Beräknar referensvärde på 128x128-nät:")
 _, _, interior_ref, A_ref, M_ref = bygg_och_los(128)
 lambda_ref, _ = eigsh(A_ref, k=1, M=M_ref, which='SM') #beräkna egenvärden på samma sätt som tidigare, k=1 pga behöver bara det minsta
@@ -123,5 +123,5 @@ ax.set_title('Konvergens med V = 10^3(x_1-1/2)^2', fontsize=13)
 ax.legend(fontsize=11)
 ax.grid(True, which='both', linestyle='--', alpha=0.5)
 plt.tight_layout()
-#plt.savefig('stjärn_konvergens.png', dpi=150)
+plt.savefig('stjärn_konvergens.png', dpi=150)
 plt.show()

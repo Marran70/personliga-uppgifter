@@ -54,9 +54,6 @@ def plot_mesh_2d(V, K):
         plot(v[0], v[1], "o")
 
 
-
-
-
 #5.7
 def evaluate_basis_2d(i, x, X):
 
@@ -93,10 +90,7 @@ def generate_quadrature_2d(X):
     b = X[:, 2] - X[:, 0]
     area = 0.5 * abs(a[0] * b[1] - a[1] * b[0])
 
-    # Compute quadrature points (midpoints of the edges)
-    # p0: midpoint between vertex 0 and 1
-    # p1: midpoint between vertex 1 and 2
-    # p2: midpoint between vertex 2 and 0
+   
     p0 = (X[:, 0] + X[:, 1]) / 2.0
     p1 = (X[:, 1] + X[:, 2]) / 2.0
     p2 = (X[:, 2] + X[:, 0]) / 2.0
@@ -104,7 +98,7 @@ def generate_quadrature_2d(X):
     # Stack the points into a 2x3 matrix
     points = np.column_stack((p0, p1, p2))
 
-    # Compute quadrature weights
+    
     # For this rule, each point gets 1/3 of the total area
     weights = np.array([area / 3.0, area / 3.0, area / 3.0])
 
@@ -191,8 +185,6 @@ def assemble_vector_2d(rhs, V, K):
 
    
         b_K = compute_element_vector_2d(rhs, X)
-
-        
         for i in range(3):
             I = K_[i]
             b[I] += b_K[i]

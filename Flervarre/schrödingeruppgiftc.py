@@ -65,20 +65,20 @@ for n in n_values:
 log_h = np.log(h_values)
 log_e = np.log(errors)
 
-# polyfit(x, y, 1) passar en rät linje till datan
-# koefficienter[0] är lutningen = konvergensordningen p
+#polyfit(x, y, 1) passar en rät linje till datan
+#koefficienter[0] är lutningen = konvergensordningen p
 koefficienter = np.polyfit(log_h, log_e, 1)
 p = koefficienter[0]
 print(f"\nKonvergensordning p = {p:.2f}")
 
-# Steg 5: Plotta log-log
+#Steg 5: Plotta log-log
 
 fig, ax = plt.subplots(figsize=(7, 5))
-# Plotta felet
+#Plotta felet
 ax.loglog(h_values, errors, 'bo-', label='FEM-fel lambda_h - lambda_11')
 
-# Plotta en referenslinje med lutning p för jämförelse
-# Vi skalar den så att den passar vår data
+#Plotta en referenslinje med lutning p för jämförelse
+#Vi skalar den så att den passar vår data
 h_ref = np.array(h_values)
 ref_line = errors[0] * (h_ref / h_values[0])**p
 ax.loglog(h_ref, ref_line, 'r--', label=f'Referens h^{p:.1f}') #referenslinje
@@ -89,5 +89,5 @@ ax.set_title('Konvergens för minsta egenvärdet', fontsize=13)
 ax.legend(fontsize=11)
 ax.grid(True, which='both', linestyle='--', alpha=0.5)
 plt.tight_layout()
-#plt.savefig('konvergens.png', dpi=150)
+plt.savefig('konvergens.png', dpi=150)
 plt.show()

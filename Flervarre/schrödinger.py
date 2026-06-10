@@ -74,7 +74,7 @@ for k in range(num_eigs):
     ax.set_ylabel('x2')
 
 plt.tight_layout()
-#plt.savefig('egenfunktioner.png', dpi=150)
+plt.savefig('egenfunktioner.png', dpi=150)
 plt.show()
 
 # Jämför med analytiska egenvärden
